@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .app-container {
@@ -26,6 +27,9 @@ body {
 
 .footer-container {
     height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     background-color: #f2f2f2;
     padding-bottom: 4.2rem;
     padding-top: 2.1rem;
@@ -33,4 +37,51 @@ body {
 
 .content-container {
     height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fdfdfd;
+}
+
+.progress-bar-container {
+    padding-bottom: 4.2rem;
+    padding-top: 1rem;
+}
+
+.form {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.input-form {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-text-field  {
+    height: 25%;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 5px;
+    font-size: larger;
+}
+
+.cta-button {
+    width: 80%;
+    height: 10%;
+    background-color: #009517;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: larger;
 }
