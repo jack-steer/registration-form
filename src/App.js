@@ -1,9 +1,9 @@
 
 import "./App.css";
 
-import { Header } from "./components/Header.js";
-import { Footer } from "./components/Footer.js";
-import { InputTextField } from "./components/InputTextField.js";
+import { Header } from "./components/Header/Header.js";
+import { Footer } from "./components/Footer/Footer.js";
+import { InputTextField } from "./components/InputTextField/InputTextField.js";
 
 const App = () => {
   const renderContents = () => {
@@ -11,8 +11,8 @@ const App = () => {
       <>
         <h2>Sign Up</h2>
         <div className="form">
-          <InputTextField labelText={"First Name"} placeholder={"John"}></InputTextField>
-          <InputTextField labelText={"Surname"} placeholder={"Smith"}></InputTextField>
+          <InputTextField id={"input-text-field-first-name"} labelText={"First Name"} placeholder={"John"}></InputTextField>
+          <InputTextField id={"input-text-field-last-name"} labelText={"Surname"} placeholder={"Smith"}></InputTextField>
         </div>
         <button className="cta-button">Next</button>
         <p>Already have an account? Login here</p>

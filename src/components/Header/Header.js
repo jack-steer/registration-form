@@ -1,4 +1,4 @@
-import '../App.css';
+import './Header.css';
 import logo from './logo.png';
 
 export const Header = () => {
