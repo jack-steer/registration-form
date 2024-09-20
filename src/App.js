@@ -1,23 +1,22 @@
-
 import "./App.css";
+
+import { useState } from "react";
 
 import { Header } from "./components/Header/Header.js";
 import { Footer } from "./components/Footer/Footer.js";
-import { InputTextField } from "./components/InputTextField/InputTextField.js";
+import { FirstLastName } from "./components/FirstLastName.js";
+import { Email } from "./components/Email.js";
 
 const App = () => {
+
+  const [step, useStep] = useState(0);
   const renderContents = () => {
-    return (
-      <>
-        <h2>Sign Up</h2>
-        <div className="form">
-          <InputTextField id={"input-text-field-first-name"} labelText={"First Name"} placeholder={"John"}></InputTextField>
-          <InputTextField id={"input-text-field-last-name"} labelText={"Surname"} placeholder={"Smith"}></InputTextField>
-        </div>
-        <button className="cta-button">Next</button>
-        <p>Already have an account? Login here</p>
-      </>
-    );
+    switch(step) {
+      case 0:
+        return <FirstLastName useStep={useStep}> </FirstLastName>
+      case 1:
+        return <Email/>
+    }
   };
 
   return (
