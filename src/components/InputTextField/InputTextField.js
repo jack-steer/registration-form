@@ -1,10 +1,15 @@
 import "./InputTextField.css";
 
-export const InputTextField = ({ id, labelText, placeholder }) => {
+export const InputTextField = ({ id, labelText, placeholder, onChange }) => {
   return (
     <div className="input-form">
       <label>{labelText}</label>
-      <input type="text" placeholder={placeholder} id={id} />
+      <input
+        type="text"
+        placeholder={placeholder}
+        id={id}
+        onChange={onChange}
+      />
     </div>
   );
 };

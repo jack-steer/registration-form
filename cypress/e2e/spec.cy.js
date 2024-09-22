@@ -17,4 +17,10 @@ describe('User Interactions - Success', () => {
   })
 })
 
-describe('User Interactions - Failure', () => {})
+describe('User Interactions - Failure', () => {
+  it('should halt entry to step 2 if name details are not completed', () => {
+    cy.visit('/');
+    cy.get('#input-text-field-last-name').type('Doe')
+    cy.get('.cta-button').should('be.disabled')
+  })
+})

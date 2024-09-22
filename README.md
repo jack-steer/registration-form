@@ -20,3 +20,7 @@ Running the below command will boot up Cypress in addition to the application to
 
 ##### `npm run cy:open`
 
+# Snyk
+
+# Lighthouse
+
