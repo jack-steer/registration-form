@@ -6,6 +6,7 @@ import { Header } from "./components/Header/Header.js";
 import { Footer } from "./components/Footer/Footer.js";
 import { FirstLastName } from "./components/FirstLastName.js";
 import { Email } from "./components/Email.js";
+import { UsernamePassword } from "./components/UsernamePassword.js";
 
 const App = () => {
   const [step, useStep] = useState(0);
@@ -22,6 +23,8 @@ const App = () => {
         );
       case 1:
         return <Email useStep={useStep} useInputData={useInputData}></Email>;
+      case 2:
+        return <UsernamePassword></UsernamePassword>
     }
   };
 

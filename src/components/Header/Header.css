@@ -9,5 +9,5 @@
 
 .brand-logo {
     height: 90%;
-    width: 15%;
+    max-width: 100%;
 }

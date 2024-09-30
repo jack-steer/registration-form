@@ -34,14 +34,6 @@ body {
     justify-content: space-evenly;
 }
 
-.input-form {
-    height: 100%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 input[id^="input-text-field"]  {
     height: 50px;
     border-radius: 5px;
@@ -50,15 +42,38 @@ input[id^="input-text-field"]  {
     font-size: larger;
 }
 
-.cta-button {
-    width: 80%;
-    height: 10%;
-    background-color: #009517;
-    border: 0;
-    border-radius: 5px;
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: larger;
+.cta-button:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+@media (min-width:320px) {
+    .cta-button {
+        width: 80%;
+        height: 10%;
+        background-color: #009517;
+        border: 0;
+        border-radius: 5px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: larger;
+    }
+}
+
+@media (min-width:1281px) {
+    .cta-button {
+        width: 25%;
+        height: 10%;
+        background-color: #009517;
+        border: 0;
+        border-radius: 5px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: larger;
+    }    
 }
