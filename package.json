@@ -6,15 +6,15 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "cy:open": "npm start & wait-on http://localhost:3000 & cypress open",
-    "cy:run": "./node_modules/.bin/cypress run"
+    "cy:run": "cypress run",
+    "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "husky": "^9.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1"
@@ -32,6 +32,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^13.14.2"
+    "cypress": "^13.14.2",
+    "husky": "^9.1.6"
   }
 }

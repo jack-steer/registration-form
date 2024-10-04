@@ -4,20 +4,14 @@ import { useState, useEffect } from "react";
 import { InputTextField } from "./InputTextField/InputTextField.js";
 import { ProgressButton } from "./ProgressButton/ProgressButton.js";
 
+import { hasValidInputLength } from "../utils/validateFields.js"
+
 export const FirstLastName = ({ useStep, inputData, useInputData }) => {
   const [buttonDisabled, useButtonDisabled] = useState(true);
   const [fieldValues, useFieldValues] = useState(["", ""]);
 
-  const validateFields = () => {
-    if (fieldValues[0].length > 0 && fieldValues[1].length > 0) {
-      useButtonDisabled(false);
-    } else {
-      useButtonDisabled(true);
-    }
-  };
-
   useEffect(() => {
-    validateFields();
+    hasValidInputLength(fieldValues) ? useButtonDisabled(false) : useButtonDisabled(true);
   }, [fieldValues]);
 
   const handleChange = (index) => (e) => {

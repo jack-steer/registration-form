@@ -14,7 +14,6 @@ const App = () => {
   const [inputData, useInputData] = useState({});
 
   const renderContents = () => {
-    console.dir(inputData)
     switch (step) {
       case 0:
         return (
