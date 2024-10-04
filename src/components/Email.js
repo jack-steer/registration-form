@@ -1,4 +1,8 @@
 import { useState } from "react";
+
+import { ProgressButton } from "./ProgressButton/ProgressButton";
+import { InputTextField } from "./InputTextField/InputTextField";
+
 import "./Email.css";
 
 export const Email = ({ useStep }) => {
@@ -9,31 +13,26 @@ export const Email = ({ useStep }) => {
       useButtonDisabled(false);
     } else useButtonDisabled(true);
   };
+
+  const onClick = () => {
+    useStep(2);
+  };
+
   return (
     <>
       <h2>Step 2</h2>
       <div className="form">
-        <div className="input-form">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="input-text-field-email"
-            placeholder="john.smith@email.com"
-            size="30"
-            onChange={isEmailValid}
-            required
-          />
-        </div>
+        <InputTextField
+          id={"input-text-field-email"}
+          type={"email"}
+          labelText={"Email"}
+          placeholder={"john.smith@email.com"}
+          onChange={isEmailValid}
+        ></InputTextField>
       </div>
-      <button
-        className="cta-button"
-        onClick={() => {
-          useStep(2);
-        }}
-        disabled={buttonDisabled}
-      >
+      <ProgressButton buttonDisabled={buttonDisabled} onClick={onClick}>
         Next
-      </button>
+      </ProgressButton>
       <p>Already have an account? Login here</p>
     </>
   );

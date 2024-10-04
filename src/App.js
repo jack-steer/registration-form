@@ -24,7 +24,9 @@ const App = () => {
       case 1:
         return <Email useStep={useStep} useInputData={useInputData}></Email>;
       case 2:
-        return <UsernamePassword></UsernamePassword>
+        return <UsernamePassword useStep={useStep} useInputData={useInputData} ></UsernamePassword>
+      case 3:
+        return // Review details 
     }
   };
 
