@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { InputTextField } from "./InputTextField/InputTextField.js";
 import { ProgressButton } from "./ProgressButton/ProgressButton.js";
 
-export const FirstLastName = ({ useStep, useInputData }) => {
+export const FirstLastName = ({ useStep, inputData, useInputData }) => {
   const [buttonDisabled, useButtonDisabled] = useState(true);
   const [fieldValues, useFieldValues] = useState(["", ""]);
 
@@ -28,7 +28,7 @@ export const FirstLastName = ({ useStep, useInputData }) => {
 
   const onClick = () => {
     useStep(1);
-    useInputData({ username: fieldValues[0], password: fieldValues[1] });
+    useInputData( {...inputData,  firstname: fieldValues[0], lastname: fieldValues[1] });
   }
 
   return (

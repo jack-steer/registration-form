@@ -4,7 +4,7 @@ import { InputTextField } from "./InputTextField/InputTextField";
 import { ProgressButton } from "./ProgressButton/ProgressButton";
 import "./Email.css";
 
-export const UsernamePassword = ({ useStep }) => {
+export const UsernamePassword = ({ useStep, inputData, useInputData }) => {
   const [buttonDisabled, useButtonDisabled] = useState(true);
   const [fieldValues, useFieldValues] = useState(["", ""]);
 
@@ -28,11 +28,12 @@ export const UsernamePassword = ({ useStep }) => {
 
   const onClick = () => {
     useStep(3)
+    useInputData({...inputData, username: fieldValues[0], password: fieldValues[1]});
   }
 
   return (
     <>
-      <h2>Step 3</h2>
+      <h2>Step 3 - Login Details</h2>
       <div className="form">
         <InputTextField
           id={"input-text-field-username"}

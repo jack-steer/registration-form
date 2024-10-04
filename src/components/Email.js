@@ -5,22 +5,25 @@ import { InputTextField } from "./InputTextField/InputTextField";
 
 import "./Email.css";
 
-export const Email = ({ useStep }) => {
+export const Email = ({ useStep, inputData, useInputData }) => {
   const [buttonDisabled, useButtonDisabled] = useState(true);
+  const [fieldValue, useFieldValue] = useState([""]);
 
   const isEmailValid = (e) => {
     if (e.nativeEvent.srcElement.validity.valid) {
       useButtonDisabled(false);
+      useFieldValue(e.target.value);
     } else useButtonDisabled(true);
   };
 
   const onClick = () => {
     useStep(2);
+    useInputData( { ...inputData, email: fieldValue });
   };
 
   return (
     <>
-      <h2>Step 2</h2>
+      <h2>Step 2 - Contact Information</h2>
       <div className="form">
         <InputTextField
           id={"input-text-field-email"}
